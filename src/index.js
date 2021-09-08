@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-// import reportWebVitals from './reportWebVitals';
 
 // ReactDOM.render(
 //     <React.StrictMode>
@@ -14,30 +13,30 @@ import ReactDOM from 'react-dom';
 // // to log results (for example: reportWebVitals(console.log))
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
-const element = React.createElement('h1', null, 'Hello World');
+// const element = React.createElement('h1', null, 'Hello World');
 
-console.log(element);
+// console.log(element);
 
-const element2 = <h1>Hello World </h1>;
+// const element2 = <h1>Hello World </h1>;
 
-console.log(element2);
+// console.log(element2);
 
-function getGreeting(user) {
-    if (user) {
-        return <h2>Hello {user} </h2>;
-    }
-    return <h1>Hello, Stranger</h1>;
-}
+// function getGreeting(user) {
+//     if (user) {
+//         return <h2>Hello {user} </h2>;
+//     }
+//     return <h1>Hello, Stranger</h1>;
+// }
 
-const element3 = <h1>Hello {getGreeting('Mr Mostafij')}</h1>;
-console.log(element3);
+// const element3 = <h1>Hello {getGreeting('Mr Mostafij')}</h1>;
+// console.log(element3);
 
-const element4 = (
-    <h1 className="heading" tabIndex="index">
-        <span className="text"> Hello World</span>
-        <img src="" alt="IMG" />
-    </h1>
-);
+// const element4 = (
+//     <h1 className="heading" tabIndex="index">
+//         <span className="text"> Hello World</span>
+//         <img src="" alt="IMG" />
+//     </h1>
+// );
 
 /*
 element4 = {
@@ -62,14 +61,55 @@ element4 = {
     },
 }
 */
-console.log(element4);
-const element5 = (
-    <h1 className="heading" tabIndex="index">
-        <span className="text"> Hello World</span>
-        <img src="" alt="IMG" />
+// console.log(element4);
+// const element5 = (
+//     <h1 className="heading" tabIndex="index">
+//         <span className="text"> Hello World</span>
+//         <img src="" alt="IMG" />
+//     </h1>
+// );
+
+// console.log(element5);
+
+// ReactDOM.render(element5, document.getElementById('root'));
+// ReactDOM.render(
+//     <React.StrictMode>
+//         <App />
+//     </React.StrictMode>,
+//     document.getElementById('root')
+// );
+// reportWebVitals();
+// const element = React.createElement('h1', null, 'Hello World');
+const element = <h1>Hello World</h1>;
+
+function getGreeting(user) {
+    if (user) {
+        return <h1>Hello, {user}</h1>;
+    }
+    return <h1>Hello, Stranger.</h1>;
+}
+
+console.log(getGreeting('Mostafij'));
+const element2 = <h1>Hello {getGreeting('user')}</h1>;
+console.log(element2);
+console.log(element);
+const element3 = (
+    <h1 className="heading" tabIndex={indexedDB}>
+        <span className="text"> Hello MR </span>
+        <img src="" alt="" />
     </h1>
 );
+console.log(element3);
+ReactDOM.render(element3, document.getElementById('root'));
+ReactDOM.render(element2, document.getElementById('root2'));
+// const index = 0;
 
-console.log(element5);
-
-ReactDOM.render(element5, document.getElementById('root'));
+setInterval(() => {
+    const element4 = (
+        <h1 className="head" tabIndex={indexedDB}>
+            <span className="myClass">Hello {new Date().toLocaleTimeString()}</span>
+            <img src="" alt="" />
+        </h1>
+    );
+    ReactDOM.render(element4, document.getElementById('root2'));
+}, 1000);
