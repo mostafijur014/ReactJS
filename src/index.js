@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
@@ -80,6 +81,8 @@ element4 = {
 // );
 // reportWebVitals();
 // const element = React.createElement('h1', null, 'Hello World');
+
+// JSX and Rendering Elements
 const element = <h1>Hello World</h1>;
 
 function getGreeting(user) {
@@ -113,3 +116,32 @@ setInterval(() => {
     );
     ReactDOM.render(element4, document.getElementById('root2'));
 }, 1000);
+
+// Compomemts and Props
+function Clock({ locale }) {
+    return (
+        <h1 className="head" tabIndex={indexedDB}>
+            <span className="myClass">Hi {new Date().toLocaleTimeString(locale)}</span>
+            <img src="" alt="" />
+        </h1>
+    );
+}
+ReactDOM.render(<Clock locale="bn-BD" />, document.getElementById('root3'));
+
+// eslint-disable-next-line react/prefer-stateless-function
+class Clocks extends React.Component {
+    // eslint-disable-next-line class-methods-use-this
+    render() {
+        return (
+            <h1 className="head">
+                <span className="myClass">
+                    New Clock {this.props.children}{' '}
+                    {new Date().toLocaleTimeString(this.props.locale)}
+                </span>
+            </h1>
+        );
+    }
+}
+
+// const ClocksComponent = new Clocks();
+ReactDOM.render(<Clocks locale="bn-BD"> Created </Clocks>, document.getElementById('root4'));
